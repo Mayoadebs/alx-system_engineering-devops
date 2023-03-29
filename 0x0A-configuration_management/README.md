@@ -1,22 +1,44 @@
-# 0x0A Configuration management
+# 0x0A. Configuration management
 
-## Description
-What you should learn from this project:
+## Resource
 
----
+- [Intro to Configuration Management](https://www.digitalocean.com/community/tutorials/an-introduction-to-configuration-management)
+- [Puppet resource type: file](https://puppet.com/docs/puppet/5.5/types/file.html) (*Check "Resource types" for all manifest types in the left menu*)
+- [Puppet’s Declarative Language: Modeling Instead of Scripting](https://puppet.com/blog/puppets-declarative-language-modeling-instead-of-scripting/)
+- [Puppet lint](http://puppet-lint.com/)
+- [Puppet emacs mode](https://github.com/voxpupuli/puppet-mode)
+- [Puppet CookBook](https://www.puppetcookbook.com/)
 
-### [0. Create a file](./0-create_a_file.pp)
-* Using Puppet, create a file in /tmp.
+## Installing `puppet` and `puppet-lint`
 
+```sh
+# installing puppet and puppet-lint
+wget https://apt.puppet.com/puppet7-release-focal.deb && \
+    dpkg -i puppet7-release-focal.deb && \
+    apt-get update && \
+    apt-get install puppet-agent puppet-lint -y
 
-### [1. Install a package](./1-install_a_package.pp)
-* Using Puppet, install puppet-lint.
+# confirming installation
+puppet -V
+puppet-lint -v
 
+# If you get an error saying puppet command not found, source the path
+source /etc/profile.d/puppet-agent.sh
+```
 
-### [2. Execute a command](./2-execute_a_command.pp)
-* Using Puppet, create a manifest that kills a process named killmenow.
+## Tasks
 
----
+<details>
+<summary><a href="./0-create_a_file.pp">0. Create a file</a></summary><br>
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/NM2k46hX/image.png' border='0' alt='image'/></a>
+</details>
 
-## Author
-* **Jhoan Stiven Zamora Caicedo** - [jzamora5](https://github.com/jzamora5)
+<details>
+<summary><a href="./1-install_a_package.pp">1. Install a package</a></summary><br>
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/PqVvKj7c/image.png' border='0' alt='image'/></a>
+</details>
+
+<details>
+<summary><a href="./2-execute_a_command.pp">2. Execute a command</a></summary><br>
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/CxZFC13P/image.png' border='0' alt='image'/></a>
+</details>

@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# Command to fix container in docker with APACHE
+# Start Apache so as to return a
+# page conatining Hello Holberton
 service apache2 start

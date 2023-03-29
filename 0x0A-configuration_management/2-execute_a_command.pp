@@ -1,6 +1,5 @@
-# Manifest that kills a process named killmenow.
+# execute pkill command to kill bashscript file killmenow
 exec { 'pkill':
-  command => 'pkill -x killmenow',
-  path    => '/usr/bin/',
-  returns => [0,1],
+  command => 'pkill -9 -f killmenow',
+  path    => ['/usr/bin', '/usr/sbin', '/bin']
 }
